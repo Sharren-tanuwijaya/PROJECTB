@@ -5,7 +5,7 @@ let airplaneImage;
 let textImage;
 
 let airplane;
-let clouds;
+let clouds = [];
 let link;
 
 let bucketlistImage;
@@ -16,6 +16,8 @@ let a4;
 let a5;
 let a6;
 let a7;
+
+let airplaneShake;
 
 function preload() {
   earthImage = loadImage("images/earth.png");
@@ -32,11 +34,18 @@ function setup() {
   cnv.position(0,0);
   cnv.style('z-index','-1');
   airplane = new Airplane;
-  cloud1 = new Clouds(69,100,1);
-  cloud2 = new Clouds(100,500,0.8);
-  cloud3 = new Clouds(400,700,1);
-  cloud4 = new Clouds(1200,150,-1);
-  cloud5 = new Clouds(1000,580,-0.6);
+
+  // cloud1 = new Clouds(69,100,1);
+  // cloud2 = new Clouds(100,500,0.8);
+  // cloud3 = new Clouds(400,700,1);
+  // cloud4 = new Clouds(1200,150,-1);
+  // cloud5 = new Clouds(1000,580,-0.6);
+  clouds.push(new Clouds(69,100,1));
+  clouds.push(new Clouds(100,500,0.8));
+  clouds.push(new Clouds(400,700,1));
+  clouds.push(new Clouds(1200,150,-1));
+  clouds.push(new Clouds(1000,580,-0.6));
+
   link = new Link;
  
 
@@ -53,16 +62,35 @@ function draw() {
 
   airplane.update();
   airplane.display();
-  cloud1.update();
-  cloud1.display();
-  cloud2.update();
-  cloud2.display();
-  cloud3.update();
-  cloud3.display();
-  cloud4.update();
-  cloud4.display();
-  cloud5.update();
-  cloud5.display();
+  // cloud1.update();
+  // cloud1.display();
+  // cloud2.update();
+  // cloud2.display();
+  // cloud3.update();
+  // cloud3.display();
+  // cloud4.update();
+  // cloud4.display();
+  // cloud5.update();
+  // cloud5.display();
+  for (let i = 0; i < clouds.length; i ++) {
+    clouds[i].update();
+    clouds[i].display();
+  }
+
+
+
+  for (let i = 0; i < clouds.length; i ++) {
+    if (dist(airplane.x, airplane.y, clouds[i].x, clouds[i].y)<= 100) {
+      
+      airplaneShake = millis();
+      airplane.shake();
+    }
+  }
+  let curTime = millis();
+  if ((curTime-airplaneShake) >= 600) {
+    // console.log(airplaneShake)
+    airplane.stopShake();
+  }
   link.display();
   link.update();
   
@@ -82,6 +110,16 @@ class Airplane {
     this.sizeW = 190;
     this.sizeH = 90;
 
+    this.shakeBoolean = false;
+    this.rotateAngle;
+  }
+  shake() {
+    this.shakeBoolean = true;
+    // console.log('work');
+  }
+  stopShake() {
+    this.shakeBoolean = false;
+    // console.log('stop')
   }
   update() {
     // update properties here to achieve
@@ -176,8 +214,14 @@ class Airplane {
     textStyle(BOLD);
     textSize(25);
     textFont("Montsersrat");
-
-    image(airplaneImage, this.x, this.y, this.sizeW, this.sizeH);
+    push();
+    translate(this.x, this.y);
+    if (this.shakeBoolean) {
+      this.rotateAngle= map(sin(frameCount*0.1), -1, 1, -0.05, 0.15)
+      rotate(this.rotateAngle);
+    }
+    image(airplaneImage, 0, 0, this.sizeW, this.sizeH);
+    pop()
   }
 }
 
@@ -270,7 +314,7 @@ function keyPressed(){
         let linkText1 = document.createTextNode("EXPLORE HERE!");
         a1.appendChild(linkText1);
         a1.title = "EXPLORE HERE!";
-        a1.href = "https://Sharren-tanuwijaya.github.io/CCLAB/PROJECT-B/hawaii.html";
+        a1.href = "https://sharren-tanuwijaya.github.io/PROJECTB/PROJECT-B/hawaii.html";
         document.body.appendChild(a1);
         a1.style.position='absolute';
         a1.style.top='430px';
@@ -295,7 +339,7 @@ function keyPressed(){
     let linkText2 = document.createTextNode("EXPLORE HERE!");
     a2.appendChild(linkText2);
     a2.title = "EXPLORE HERE!";
-    a2.href = "https://Sharren-tanuwijaya.github.io/CCLAB/PROJECT-B/canada.html";
+    a2.href = "https://sharren-tanuwijaya.github.io/PROJECTB/PROJECT-B/canada.html";
     document.body.appendChild(a2);
     a2.style.position='absolute';
     a2.style.top='194px';
@@ -319,7 +363,7 @@ function keyPressed(){
     let linkText3 = document.createTextNode("EXPLORE HERE!");
     a3.appendChild(linkText3);
     a3.title = "EXPLORE HERE!";
-    // a3.href = "https://Sharren-tanuwijaya.github.io/CCLAB/PROJECT-B/germany.html";
+    // a3.href = "https://sharren-tanuwijaya.github.io/PROJECTB/PROJECT-B/germany.html";
     a3.href = "germany.html";
     document.body.appendChild(a3);
     a3.style.position='absolute';
@@ -343,7 +387,7 @@ function keyPressed(){
     let linkText4 = document.createTextNode("EXPLORE HERE!");
     a4.appendChild(linkText4);
     a4.title = "EXPLORE HERE!";
-    a4.href = "https://Sharren-tanuwijaya.github.io/CCLAB/PROJECT-B/italy.html";
+    a4.href = "https://sharren-tanuwijaya.github.io/PROJECTB/PROJECT-B/italy.html";
     document.body.appendChild(a4);
     a4.style.position='absolute';
     a4.style.top='289px';
@@ -366,7 +410,7 @@ function keyPressed(){
     let linkText5 = document.createTextNode("EXPLORE HERE!");
     a5.appendChild(linkText5);
     a5.title = "EXPLORE HERE!";
-    a5.href = "https://Sharren-tanuwijaya.github.io/CCLAB/PROJECT-B/greece.html";
+    a5.href = "https://sharren-tanuwijaya.github.io/PROJECTB/PROJECT-B/greece.html";
     document.body.appendChild(a5);
     a5.style.position='absolute';
     a5.style.top='282px';
@@ -389,7 +433,7 @@ function keyPressed(){
     let linkText6 = document.createTextNode("EXPLORE HERE!");
     a6.appendChild(linkText6);
     a6.title = "EXPLORE HERE!";
-    a6.href = "https://Sharren-tanuwijaya.github.io/CCLAB/PROJECT-B/dubai.html";
+    a6.href = "https://sharren-tanuwijaya.github.io/PROJECTB/PROJECT-B/dubai.html";
     document.body.appendChild(a6);
     a6.style.position='absolute';
     a6.style.top='325px';
@@ -412,7 +456,7 @@ function keyPressed(){
     let linkText7 = document.createTextNode("EXPLORE HERE!");
     a7.appendChild(linkText7);
     a7.title = "EXPLORE HERE!";
-    a7.href = "https://Sharren-tanuwijaya.github.io/CCLAB/PROJECT-B/norway.html";
+    a7.href = "https://sharren-tanuwijaya.github.io/PROJECTB/PROJECT-B/norway.html";
     document.body.appendChild(a7);
     a7.style.position='absolute';
     a7.style.top='93px';
@@ -421,6 +465,8 @@ function keyPressed(){
    
   }
 }
+
+
 
 
 

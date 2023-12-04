@@ -132,6 +132,31 @@ bearImage = loadImage("images/bear.png");
 
   }
 
+  function mousePressed(){
+
+    if(mouseX >= 350 && mouseX <= 550 && mouseY >= 1250 && mouseY <= 1280 && bearSound.isPlaying()==false){
+     bearSound.play(); 
+    }else{
+      bearSound.pause();
+    }
+
+    if(mouseX >= 700 && mouseX <= 900 && mouseY >= 1250 && mouseY <= 1280 && beaverSound.isPlaying()==false){
+      beaverSound.play(); 
+     }else{
+      beaverSound.pause();
+     }
+
+     if(mouseX >= 1060 && mouseX <= 1260 && mouseY >= 1250 && mouseY <= 1280 && mooseSound.isPlaying()==false){
+      mooseSound.play(); 
+     }else{
+      mooseSound.pause();
+     }
+  }
+
+   
+
+
+
    
 
 

@@ -85,8 +85,3 @@ ravioliImage = loadImage("images/ravioli.png");
   }
 
    
-
-
-  
-  
- 

@@ -1,14 +1,16 @@
 let NUM_OF_SNOW = 150; 
 let snow = [];
 
-let NUM_OF_LIGHTS = 50; 
+let NUM_OF_LIGHTS = 100; 
 let lights = [];
 
 let snowman1;
 let snowman2;
-let snowman3;
-let snowman4;
+// let snowman3;
+// let snowman4;
 
+let snowman2Image;
+let snowman1Image;
 
 let norwayImage;
 let norwayImage2;
@@ -20,6 +22,8 @@ let food2Image;
 let food3Image;
 let food4Image;
 
+let light = false;
+
 function preload() {
   norwayImage = loadImage("images/lofoten.jpeg");
   norwayImage2 = loadImage("images/northern.jpeg");
@@ -30,13 +34,16 @@ function preload() {
   food2Image = loadImage("images/fish.png");
   food3Image = loadImage("images/salmon.png");
   food4Image= loadImage("images/salmon2.png");
+
+  snowman2Image= loadImage("images/snowman2.png");
+  snowman1Image= loadImage("images/snowman1.png");
   
   
   
   }
   
   function setup() {
-    let cnv = createCanvas(1450, 1200);
+    let cnv = createCanvas(1450, 1450);
   cnv.parent("canvasWrapper");
   cnv.position(0,200);
   cnv.style('z-index','-1');
@@ -50,11 +57,11 @@ function preload() {
   
   }
 
-  snowman1 = new Snowman(205,950,120,0.5,400,100,950,150);
-  snowman2 = new Snowman(1105,950,120,-0.5,400,100,950,150);
+  snowman1 = new Snowman(205,950,0.5,snowman1Image);
+  snowman2 = new Snowman(1105,950,-0.5,snowman2Image);
   
-  snowman3 = new Snowman(200,1100,180,0.5,900,100,950,150);
-  snowman4 = new Snowman(1100,1100,180,-0.5,900,100,950,150);
+  // snowman3 = new Snowman(200,1100,180,0.5,200,900,250,950);
+  // snowman4 = new Snowman(1100,1100,180,-0.5,900,100,950,150);
   }
   
   function draw() {
@@ -65,18 +72,32 @@ function preload() {
     snowman2.update(); 
     snowman2.display();
 
-    snowman3.update(); 
-    snowman3.display();
-    snowman4.update(); 
-    snowman4.display();
+    // snowman3.update(); 
+    // snowman3.display();
+    // snowman4.update(); 
+    // snowman4.display();
 
-    if(snowman1&&snowman3 == snowman2&&snowman4){
+    if (light == true) {
       for (let i = 0; i < lights.length; i++) {
         let l = lights[i];
         l.update();
         l.display();
       }
     }
+    
+
+    // console.log(snowman1.x);
+    if (snowman1.x == snowman2.x) {
+      console.log("work")
+      light = true;
+    }
+    // if(snowman1&&snowman3 == snowman2&&snowman4){
+    //   for (let i = 0; i < lights.length; i++) {
+    //     let l = lights[i];
+    //     l.update();
+    //     l.display();
+    //   }
+    // }
   
 
     for (let i = 0; i < snow.length; i++) {
@@ -183,23 +204,25 @@ class Snow {
 
 class Snowman {
 
-  constructor(startX,startY,dia,speedS,X,Y,X2,Y2) {
+  constructor(startX,startY,speedS,image) {
     this.x = startX;
     this.y = startY;
-    this.dia = dia;
+    // this.dia = dia;
     // this.speedY=speedY;
     this.speedS=speedS
     // this.larmAngle = 0;
-    this.armX=X
-    this.armY=Y
-    this.armX2=X2
-    this.armY2=Y2
+    // this.armX=X
+    // this.armY=Y
+    // this.armX2=X2
+    // this.armY2=Y2
+    this.image=image
   
   }
 
   update() {
 
-    // this.x = this.x + this.speedS;
+    this.x = this.x + this.speedS;
+    // this.armX= this.armX+this.speedS
 
     // this.larmAngle += 5;
 
@@ -209,22 +232,8 @@ class Snowman {
   }
 
   display() {
-   
-    // angleMode(DEGREES);
 
-    //head and body 
-    noStroke();
-    fill(255);
-    circle(this.x,this.y,this.dia);
-
-    //Arm
-    strokeWeight(5);
-    line(this.armX,this.armY,this.armX2,this.armY2); 
-    
-
-
-
-    
+    image(this.image, this.x, this.y,300, 500);
     
 //arm
     // line(-40, -10, -60, -10); // horizontal arm part

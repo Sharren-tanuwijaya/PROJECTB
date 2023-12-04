@@ -17,7 +17,7 @@ function preload() {
  shaveImage = loadImage("./images/shave.png");
  pokeImage = loadImage("./images/poke.png");
 musubiImage = loadImage("./images/musubi.png");
-huliImage = loadImage("https://github.com/Sharren-tanuwijaya/PROJECTB/blob/main/PROJECT-B/images/hulihuli.PNG");
+huliImage = loadImage("./images/hulihuli.png");
 
  oahuImage = loadImage("./images/oahu.jpeg");
  honoluluImage = loadImage("./images/honolulu.jpeg");
@@ -94,7 +94,7 @@ hawaii2Music= loadSound("sound/hawaii2.mp3");
         text("FOOD", 100, 220);
         pop();
 
-
+//rect
     stroke(66,127,113);
     rect(650,130,100,30)
     fill(255);
@@ -122,14 +122,18 @@ hawaii2Music= loadSound("sound/hawaii2.mp3");
   }
   function mousePressed(){
 
-    if(hawaii1Music.isPlaying()==false){
+    if(mouseX >= 650 && mouseX <= 750 && mouseY >= 130 && mouseY <= 160 && hawaii1Music.isPlaying()==false){
      hawaii1Music.play(); 
     }else{
       hawaii1Music.pause();
     }
+
+    if(mouseX >= 770 && mouseX <= 870 && mouseY >= 130 && mouseY <= 160 && hawaii2Music.isPlaying()==false){
+      hawaii2Music.play(); 
+     }else{
+      hawaii2Music.pause();
+     }
   }
 
 
-  
-  
  
