@@ -17,7 +17,7 @@ function preload() {
  shaveImage = loadImage("./images/shave.png");
  pokeImage = loadImage("./images/poke.png");
 musubiImage = loadImage("./images/musubi.png");
-huliImage = loadImage("./images/hulihuli.png");
+huliImage = loadImage("https://github.com/Sharren-tanuwijaya/PROJECTB/blob/main/PROJECT-B/images/hulihuli.PNG");
 
  oahuImage = loadImage("./images/oahu.jpeg");
  honoluluImage = loadImage("./images/honolulu.jpeg");
