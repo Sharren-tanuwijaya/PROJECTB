@@ -1,0 +1,49 @@
+body {
+  background-color: rgb(137, 212, 249);
+  height: 1190px;
+}
+
+img {
+  position: absolute;
+  width: 550px;
+  height: 680px;
+  top: 140px;
+  left: 450px;
+}
+
+.center {
+  display: block;
+  margin-left: 100px;
+  /* margin-right: auto; */
+  width: 50%;
+}
+
+.button {
+  border: none;
+  color: rgb(221, 38, 129);
+  padding: 15px 32px;
+  text-align: center;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 4px 2px;
+  cursor: pointer;
+  position: absolute;
+  top: 840px;
+  left: 630px;
+  background-color: rgb(180, 228, 255);
+}
+
+.title {
+  position: absolute;
+  top: 0px;
+  left: 250px;
+  width: 1000px;
+  height: 150px;
+
+  /* color:rgb(221, 234, 71);
+  font-size: 50px;
+  font-weight: bold;
+  background-color: rgb(91, 151, 220); */
+
+}

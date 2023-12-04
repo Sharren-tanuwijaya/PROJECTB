@@ -1,0 +1,35 @@
+body{
+    background-color:rgb(180, 228, 255)
+    height:1000px;
+ }
+ 
+ p{
+    font-weight:bold;
+    color: rgb(145, 21, 116);
+    background-color:black;
+ }
+ img {
+  max-width:100%;
+ }
+ .link{
+      position: absolute;
+      top: 485px;
+      right: 607px;
+      font-size: 30px;
+      color: rgb(230, 216, 73);
+ }
+ .button{
+   border: none;
+   color: rgb(0, 0, 0);
+   padding: 15px 32px;
+   text-align: center;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 4px 2px;
+  cursor: pointer;
+  position: absolute;
+  top: 485px;
+   right: 607px;
+   background-color: rgb(180,228,255);
+ }

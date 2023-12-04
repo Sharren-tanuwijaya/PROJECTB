@@ -1,0 +1,26 @@
+body{
+    background-color:rgb(137, 212, 249);
+ }
+ 
+ .title{
+   position: absolute;
+   top: 0px;
+   left: 310px;
+   width: 790px;
+   height: 220px;
+ }
+ .button{
+  border: none;
+  color: rgb(0, 0, 0);
+  padding: 15px 32px;
+  text-align: center;
+ display: inline-block;
+ font-size: 20px;
+ font-weight: bold;
+ margin: 4px 2px;
+ cursor: pointer;
+ position: absolute;
+ top: 1130px;
+  left: 1200px;
+  background-color: rgb(180,228,255);
+}
