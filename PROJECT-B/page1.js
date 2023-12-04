@@ -17,6 +17,8 @@ let t16Image;
 let t17Image;
 let t18Image;
 
+let Music;
+
 function preload() {
   t1Image = loadImage("images/t1.jpg");
   t2Image = loadImage("images/t2.jpg");
@@ -37,6 +39,8 @@ function preload() {
   t17Image = loadImage("images/t17.jpg");
   t18Image = loadImage("images/t18.jpg");
 
+  Music= loadSound("sound/memories.mp3");
+
 }
 
 function setup() {
@@ -49,53 +53,51 @@ function setup() {
 
 function draw() {
   background(137,212,249);
-
  
-
 let msSinceStartofsketch = millis();
 
 
-if (msSinceStartofsketch >= 1000) {
+if (msSinceStartofsketch >= 4000) {
   image(t1Image, 25, 73, 200, 200);
   image(t7Image, 1225, 80, 250, 200);
  
 }
-if (msSinceStartofsketch >= 2000) {
+if (msSinceStartofsketch >= 5000) {
  image(t2Image, 235, 279, 200, 200);
  image(t8Image, 1000, 121, 250, 200);
 
 }
-if (msSinceStartofsketch >= 3000) {
+if (msSinceStartofsketch >= 6000) {
     image(t3Image, 36, 530, 200, 200);
     image(t9Image, 1243, 302, 250, 200);
 
    }
-if (msSinceStartofsketch >= 4000) {
+if (msSinceStartofsketch >= 7000) {
     image(t4Image, 245, 85, 200, 200);
     image(t10Image, 1016, 505, 250, 200);
 
    }
-if (msSinceStartofsketch >= 5000) {
+if (msSinceStartofsketch >= 8000) {
     image(t5Image, 40, 272, 230, 270);
     image(t11Image, 1014, 328, 250, 200);
 
    }
-if (msSinceStartofsketch >= 6000) {
+if (msSinceStartofsketch >= 9000) {
     image(t6Image, 229, 493, 200, 250);
     image(t12Image, 1264, 510, 250, 250);
 
    }
-   if (msSinceStartofsketch >= 7000) {
+   if (msSinceStartofsketch >= 10000) {
     image(t13Image, 61, 731, 200, 270);
     image(t14Image, 1017, 710, 230, 200);
  
    }
-   if (msSinceStartofsketch >= 8000) {
+   if (msSinceStartofsketch >= 11000) {
     image(t15Image, 278, 754, 250, 200);
     image(t16Image, 1242, 763, 250, 230);
  
    }
-   if (msSinceStartofsketch >= 9000) {
+   if (msSinceStartofsketch >= 12000) {
     image(t17Image, 535, 850, 250, 210);
     image(t18Image, 796, 850, 220, 250);
  
@@ -106,4 +108,10 @@ if (msSinceStartofsketch >= 6000) {
 // text("x:" + mouseX + "y:" + mouseY, mouseX, mouseY);
 
 }
-
+function mousePressed(){
+if(Music.isPlaying()==false){
+  Music.play(); 
+ }else{
+   Music.pause();
+ }
+}

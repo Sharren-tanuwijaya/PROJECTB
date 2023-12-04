@@ -17,6 +17,7 @@ let a5;
 let a6;
 let a7;
 
+
 let airplaneShake;
 
 function preload() {
@@ -54,6 +55,7 @@ function setup() {
 function draw() {
   background(137, 212, 249);
 
+ 
 
   image(earthImage, 410, 150, 700, 700);
   image(bucketlistImage, 30, 300, 320, 400);
