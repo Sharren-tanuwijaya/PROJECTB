@@ -13,13 +13,13 @@ let oahuImage;
  let hawaii2Music;
 
 function preload() {
-  locomocoImage= loadImage("./images/locomoco.png");
- shaveImage = loadImage("./images/shave.png");
- pokeImage = loadImage("./images/poke.png");
-musubiImage = loadImage("./images/musubi.png");
-huliImage = loadImage("./images/hulihuli.png");
+  locomocoImage= loadImage("images/locomoco.png");
+ shaveImage = loadImage("images/shave.png");
+ pokeImage = loadImage("images/poke.png");
+musubiImage = loadImage("images/musubi.png");
+huliImage = loadImage("images/hulihuli.png");
 
- oahuImage = loadImage("./images/oahu.jpeg");
+ oahuImage = loadImage("images/oahu.jpeg");
  honoluluImage = loadImage("./images/honolulu.jpeg");
  kauaiImage = loadImage("./images/kauai.jpeg");
  mauiImage = loadImage("./images/maui.jpeg");
