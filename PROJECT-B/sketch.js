@@ -365,8 +365,7 @@ function keyPressed(){
     let linkText3 = document.createTextNode("EXPLORE HERE!");
     a3.appendChild(linkText3);
     a3.title = "EXPLORE HERE!";
-    // a3.href = "https://sharren-tanuwijaya.github.io/PROJECTB/PROJECT-B/germany.html";
-    a3.href = "germany.html";
+    a3.href = "https://sharren-tanuwijaya.github.io/PROJECTB/PROJECT-B/canada.html";
     document.body.appendChild(a3);
     a3.style.position='absolute';
     a3.style.top='237px';
