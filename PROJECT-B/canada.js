@@ -39,6 +39,8 @@ beaverImage = loadImage("images/beaver.png");
 mooseImage = loadImage("images/moose.png");
 bearImage = loadImage("images/bear.png");
 
+canadaMusic= loadSound("sound/canada.mp3");
+
     // glass = new Glass;
   }
   
@@ -150,6 +152,12 @@ bearImage = loadImage("images/bear.png");
       mooseSound.play(); 
      }else{
       mooseSound.pause();
+     }
+
+     if(canadaMusic.isPlaying()==false){
+      canadaMusic.play(); 
+     }else{
+      canadaMusic.pause();
      }
   }
 
