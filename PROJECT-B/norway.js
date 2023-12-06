@@ -31,7 +31,7 @@ function preload() {
   norwayImage4 = loadImage("images/geiranger.jpeg");
 
   food1Image = loadImage("images/lamb.png");
-  food2Image = loadImage("images/fish.png");
+  food2Image = loadImage("images/fishcopy.png");
   food3Image = loadImage("images/salmon.png");
   food4Image= loadImage("images/salmon2.png");
 
