@@ -8,6 +8,8 @@ let mykonosImage;
 let santoriniImage;
  let zakythonosImage;
 
+let greeceMusic;
+
 
 
 
@@ -21,6 +23,8 @@ function preload() {
     mykonosImage= loadImage("images/mykonos.jpeg");
     santoriniImage= loadImage("images/santorini.jpeg");
      zakythonosImage= loadImage("images/zakythonos.jpeg");
+
+     greeceMusic= loadSound("sound/greece.mp3");
 
     // glass = new Glass;
   }
@@ -87,6 +91,13 @@ function preload() {
 
   }
 
+function mousePressed(){
+  if(greeceMusic.isPlaying()==false){
+    greeceMusic.play(); 
+   }else{
+    greeceMusic.pause();
+   }
+  }
 
   
   

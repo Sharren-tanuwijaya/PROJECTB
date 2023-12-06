@@ -22,6 +22,8 @@ let food2Image;
 let food3Image;
 let food4Image;
 
+let norwayMusic;
+
 let light = false;
 
 function preload() {
@@ -37,6 +39,7 @@ function preload() {
 
   snowman2Image= loadImage("images/snowman2.png");
   snowman1Image= loadImage("images/snowman1.png");
+  norwayMusic= loadSound("sound/norway.mp3");
   
   }
   
@@ -275,5 +278,11 @@ class Lights {
 
   
   }
-
 }
+function mousePressed(){
+  if(norwayMusic.isPlaying()==false){
+    norwayMusic.play(); 
+   }else{
+    norwayMusic.pause();
+   }
+  }
