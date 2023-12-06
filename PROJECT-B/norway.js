@@ -38,8 +38,6 @@ function preload() {
   snowman2Image= loadImage("images/snowman2.png");
   snowman1Image= loadImage("images/snowman1.png");
   
-  
-  
   }
   
   function setup() {
