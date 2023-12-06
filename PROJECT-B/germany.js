@@ -1,6 +1,5 @@
 let berlinerImage;
 let pretzelsImage;
-let bratwurstImage;
 let rouladenImage;
 let blutwurstImage;
 
@@ -19,10 +18,9 @@ let germanSound;
 
 
 function preload() {
-    // beerImage = loadImage("images/beer.png");
+
 berlinerImage = loadImage("images/berliner.png");
 pretzelsImage= loadImage("images/pretzels.png");
-bratwurstImage= loadImage("images/bratwurst.png");
 rouladenImage= loadImage("images/rouladen.png");
  blutwurstImage= loadImage("images/blutwurst.png");
 
