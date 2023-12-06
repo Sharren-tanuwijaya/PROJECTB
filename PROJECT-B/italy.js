@@ -8,6 +8,8 @@ let mapleImage;
  let butterImage;
  let ravioliImage;
 
+ let italyMusic;
+
 function preload() {
   amalfiImage= loadImage("images/amalfi.jpeg");
  cinqueImage = loadImage("images/cinque.png");
@@ -18,6 +20,8 @@ mapleImage = loadImage("images/lasagna.png");
 bagelsImage = loadImage("images/spage.png");
 butterImage = loadImage("images/pannacotta.png");
 ravioliImage = loadImage("images/ravioli.png");
+
+italyMusic= loadSound("sound/italy.mp3");
 
     // glass = new Glass;
   }
@@ -83,5 +87,13 @@ ravioliImage = loadImage("images/ravioli.png");
         pop();
 
   }
+
+  function mousePressed(){
+    if(italyMusic.isPlaying()==false){
+      italyMusic.play(); 
+     }else{
+      italyMusic.pause();
+     }
+    }
 
    
