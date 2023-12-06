@@ -11,7 +11,7 @@ let mapleImage;
  let italyMusic;
 
 function preload() {
-  amalfiImage= loadImage("images/amalfi.jpeg");
+amalfiImage= loadImage("images/amalfi.jpeg");
  cinqueImage = loadImage("images/cinque.png");
  dolomitesImage = loadImage("images/dolomites.jpeg");
 lakeImage = loadImage("images/lake.jpeg");
