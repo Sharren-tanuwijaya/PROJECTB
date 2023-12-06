@@ -7,6 +7,7 @@ let desert;
 let desert2;
 
 let camel;
+let dubaiMusic;
 
 // let mapleImage;
 //  let bagelsImage;
@@ -27,6 +28,8 @@ function preload() {
   camelImage = loadImage("images/camel.png");
   desertImage = loadImage("images/desert.png");
   desert2Image = loadImage("images/desert2.png");
+
+  dubaiMusic= loadSound("sound/dubai.mp3");
 
   //  mapleImage = loadImage("images/maple.png");
   // bagelsImage = loadImage("images/bagels.png");
@@ -140,5 +143,13 @@ class Camel {
     pop();
   }
 }
+
+function mousePressed(){
+  if(dubaiMusic.isPlaying()==false){
+    dubaiMusic.play(); 
+   }else{
+    dubaiMusic.pause();
+   }
+  }
 
 
