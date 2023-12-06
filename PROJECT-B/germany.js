@@ -1,5 +1,3 @@
-// let beerImage;
-// // let glass;
 let berlinerImage;
 let pretzelsImage;
 let bratwurstImage;
@@ -22,11 +20,11 @@ let germanSound;
 
 function preload() {
     // beerImage = loadImage("images/beer.png");
-berlinerImage = loadImage("images/berliner.PNG");
-pretzelsImage= loadImage("images/pretzels.PNG");
-bratwurstImage= loadImage("images/bratwurst.PNG");
-rouladenImage= loadImage("images/rouladen.PNG");
- blutwurstImage= loadImage("images/blutwurst.PNG");
+berlinerImage = loadImage("images/berliner.png");
+pretzelsImage= loadImage("images/pretzels.png");
+bratwurstImage= loadImage("images/bratwurst.png");
+rouladenImage= loadImage("images/rouladen.png");
+ blutwurstImage= loadImage("images/blutwurst.png");
 
 titiseeImage =loadImage("images/titisee.jpeg");
 neushImage =loadImage("images/neush.jpeg");
@@ -66,7 +64,6 @@ germanSound= loadSound("sound/german.mp3");
       strokeWeight(4);
       text("WORDS YOU NEED TO KNOW ", 60, 150);
       text("BEFORE GOING TO GERMANY ", 60, 180);
-      pop();
     image(wordsImage, 10, 200, 400, 650);
 
     fill(255);
